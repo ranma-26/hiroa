@@ -1,0 +1,973 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+body {
+  font-family:"Gothic A1", "Roboto";
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 16px;
+}
+.font-lr {
+  font-size: 22px;
+}
+.font-lg {
+  font-size: 28px;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-md {
+  margin-bottom: 40px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-md {
+  padding-bottom: 40px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $contentMaxWidth;
+}
+.main-title {
+  @extend .font-lg;
+  font-weight: 700;
+  margin-bottom: 0;
+  display: block;
+}
+.sub-title {
+  @extend .font-sm;
+  color: $cSubTitle;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  color: $cWhite;
+  background-color: $cBlue;
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 16px 56px;
+  border: 0px solid $cWhite;
+}
+
+#main-content {
+  position: relative;
+  z-index: 0;
+}
+
+#container {
+  background-color: $cWhite;
+  position: relative;
+  z-index: 10;
+}
+// ヘッダー
+.header {
+  @extend .mb-md;
+  &__color {
+    background-color: $cBlack;
+    width: 100%;
+  }
+
+  &__inner {
+    position: relative;
+    padding-top:11px;
+    padding-left: 24px;
+
+  }
+  &__img {
+    text-align: right;
+    margin-left: 67px; 
+    overflow: hidden;
+
+    & > img {
+      max-width: 319px;
+      max-height: 369px;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    @extend .content-width;
+    color:$cWhite;
+  }
+  &__sub {
+    @extend .flex;
+    @extend .font-sm;
+    line-height: 150%;
+    @extend .mb-sm;
+    
+    &Under {
+      font-size: 9px;
+      opacity: 0.6;
+      text-align: center;
+    }
+ 
+  } 
+
+  &__btn {
+    display: none;
+    margin-top: 37px;
+    width: 240px;
+    white-space: nowrap;
+
+    & > p {
+      font-size: 10px;
+      margin-top: 8px;
+      text-align: center;
+    }
+  }
+
+}
+
+.main-title {
+  font-size: 72px;
+  margin-top: 40px;
+
+  &-sub {
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: bold;
+    @extend .flex; 
+  }
+}
+// 申し訳ございません、こんな人はページを閉じてください
+.content {
+
+  &__top {
+    text-align: center;
+    color: $cRed;
+    font-weight: bold;
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  &__inner {
+    height: auto;
+    display: inline-flex;
+    width: 100%;
+    @extend .mb-md;
+  }
+  &__nav {
+    @extend .font-sm;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  &__ul {
+    margin-bottom: 0;
+  }
+
+
+  &__second {
+    text-align: center;
+    color: $cBlue;
+    font-weight: bold;
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+}
+// 「合格」だけを目標とし,無駄を徹底排除。
+.catch {
+  &__color {
+    padding: 40px 24px 0  24px;
+    height: 225px;
+    background-color: $cBlack50;
+  }
+
+  &__top {
+    white-space: nowrap;
+    text-align: center;
+    font-weight: bold;
+    @extend .font-lr;
+    @extend .mb-sm;
+  }
+
+  &__about {
+    @extend .font-sm;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+// 予備校の３つの無駄とは？
+.article {
+  
+  color: $cWhite;
+
+  &__color {
+    height: auto;
+    background-color: $cBlack;
+    padding: 40px 24px 40px 24px;
+  }
+
+  &__top {
+    @extend .font-lg;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+   
+   padding-bottom: 24px;
+  }
+  &__head {
+    padding: 0px 8px 8px 0px;
+
+    & img, 
+    > span {
+      vertical-align: middle;
+      font-size: 16px;
+
+    }
+  }
+
+  &__about {
+   line-height: 18px;
+   margin-bottom: 0px;
+  }
+}
+
+// 受験は想像以上に厳しい
+.travel {
+  position: relative;
+  color: $cWhite;
+
+  &__top {
+    @extend .font-lg;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 48px;
+    &-under {
+      margin-bottom: 24px;
+    }
+ 
+
+  }
+  &__img {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    z-index: -1;
+    & > img {
+      width: 100%;
+      
+    }
+  }
+  
+  &__underLine {
+    background: linear-gradient(transparent 60%, $cBlue 70%);
+  }
+  &__inner {
+    padding: 0px 24px 0px 24px;
+  }
+  &__color {
+    
+    padding: 40px 0px 0px  0px;
+
+    & > p {
+      line-height: 18px;
+     }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      
+    }
+    &__content {
+
+    & > p {
+      margin-bottom: 8px;
+    }
+    
+
+    &-top {
+      font-size: 20px;
+      font-weight: bold;
+      display: inline;
+      vertical-align: middle;
+    }
+
+    &-under {
+      margin: 16px 0px 16px 0px !important;
+      
+    }
+
+    &-underTop {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 0px 35px 40px 35px !important;
+      margin-bottom: 0px;
+    }
+    }
+  }
+// もしあなたにこんなコーチがいたらどうだろうか?
+  .coach {
+    position: relative;
+    color: $cBlack;
+    
+    &__inner {
+      width: 100%;
+      padding: 40px 24px 16px 24px;
+    }
+
+    &__img {
+      position: absolute;
+      top:0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      overflow: hidden;
+
+      & > img {
+        width: 100%;
+      }
+    }
+
+    &__top {
+      @extend .font-lg;
+      line-height: 42px;
+      @extend .mb-sm;
+    }
+
+    &__about {
+      font-size: 12px;
+      line-height: 18px;
+      margin-bottom: 24px;
+    }
+  }
+
+// なぜあなたにコーチが必要なのか？
+.need {
+  position: relative;
+  color: $cWhite;
+
+  &__inner {
+      width: 100%;
+      padding: 40px 24px 16px 24px;
+  }
+
+  &__image {
+    background-color: rgba(40, 44, 57, 1);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &__item {
+
+    & > p {
+      @extend .mb-sm;
+    }
+  }
+
+  &__top {
+    text-align: center;
+    @extend .font-lg;
+    @extend .mb-sm;
+  }
+
+  &__ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @extend .mb-sm;
+  }
+
+  &__li::before {
+    content:  "";    
+    width:  8px;              
+    height:  8px;             
+    display:  inline-block;   
+    background-color: $cRed;  
+    border-radius:  50%;
+    margin-right: 8px;
+  }
+
+  &__about {
+    margin: 0px !important;
+  }
+}
+// なぜ「となりにコーチ」なのか？ + +αオプション
+.item {
+  height: 0px;
+  &__inner {
+    transform: translateY(-60px) rotate(-5.19deg)
+  }
+  &__color {
+    background-color: $cBlue;
+    padding: 20px 24px;
+  }
+
+  &__top {
+    color: $cWhite;
+    @extend .font-lg;
+    font-weight: bold;
+    text-align: center;
+
+    &-one {
+      font-size: 40px;
+    }
+  }
+}
+// となりにコーチが結果を出す理由
+.lecture {
+  &__inner {
+    padding: 0px 24px 16px 24px;
+
+    &-top {
+      font-weight: bold;
+      font-size: 14px;
+      margin: 24px 0px;
+      text-align: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0px 0px 32px rgba(24, 143, 253, 0.16);
+    border-radius: 20px;
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  &__logo {
+    width: auto;
+    height: auto;
+    margin:40px auto 16px auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+// 脳科学に基づいた"超効率的"な勉強法指導
+.play {
+  color: $cWhite;
+  &__color {
+    background-color: $cBlack600;
+    padding: 40px 24px 40px 24px;
+  }
+
+  &__top {
+    @extend .font-lg;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__content {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-align: center;
+
+    &.second {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__about {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+// 京大生による受験ミーティングで勉強に関する「すべての悩みを解消」「目的達成までの完璧な計画」を実現
+.plan {
+  color: $cBlack;
+  &__color {
+    padding: 40px 24px 28px 24px;
+    background-color: $cBlack50;
+    width: 100%;
+  }
+
+  &__top {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  &__ul {
+    padding-left: 16px;
+  }
+  &__img {
+    width: 100%;
+    @extend .mb-sm;
+  }
+}
+
+// 定期的な報告システムで学習を完ペキに習慣化
+.habits {
+  position: relative;
+  color: $cWhite;
+
+  &__inner {
+      width: 100%;
+      padding: 40px 24px 40px 24px;
+  }
+
+  &__image {
+    background-color: rgba(40, 44, 57, 1);
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &__item {
+    & > p {
+      @extend .mb-sm;
+    }
+  }
+
+  &__top {
+    @extend .font-lg;
+    @extend .mb-sm;
+  }
+
+  &__about {
+    margin: 0px !important;
+  }
+
+  &__imgSecond {
+    display: block;
+    margin: 0 auto;
+  }
+}
+// 生徒が説明するアウトプットタイムで完璧な理解度を目指す
+.output {
+  position: relative;
+  color: $cBlack;
+
+  &__inner {
+      width: 100%;
+      padding: 40px 24px 40px 24px;
+  }
+
+  &__image {
+    background-color: $cWhite;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &__item {
+
+    & > p {
+      @extend .mb-sm;
+    }
+  }
+
+  &__top {
+    text-align: center;
+    @extend .font-lg;
+    @extend .mb-sm;
+  }
+
+  &__ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @extend .mb-sm;
+  }
+
+  &__li::before {
+    content:  "";    
+    width:  8px;              
+    height:  8px;             
+    display:  inline-block;   
+    background-color: $cBlue;  
+    border-radius:  50%;
+    margin-right: 8px;
+  }
+
+  &__about {
+    padding-bottom: 69px !important;
+  }
+}
+// 粂原ライブ授業 （コース別オプション）
+.live {
+  &__color {
+    width: 100%;
+    height: 444px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  &__item {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+  &__img {
+    position: absolute;
+    transform: translateX(91px);
+    
+    text-align: right;
+    opacity: 0.2;
+     width: 385px;
+      height: 444px;
+      object-fit: cover;
+    & > img {
+      
+     
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    height: auto;
+    padding-left: 24px;
+    padding-top: 73px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+  }
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+  }
+
+  &__title {
+    &-main {
+      font-weight: bold;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    &-sub {
+      display: flex;
+      margin: 0 auto;
+      font-size: 14px;
+    } 
+  }
+  &__sub {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__ul {
+    font-weight: bold;
+    font-size: 14px;
+    list-style: none;
+    line-height: 21px;
+    margin: 0;
+    padding: 0;
+    @extend .mb-sm;
+  }
+
+  &__li::before {
+    content:  "";    
+    width:  8px;              
+    height:  8px;             
+    display:  inline-block;   
+    background-color: $cBlue;  
+    border-radius:  50%;
+    margin-right: 8px;
+  }
+
+  &__about {
+    font-size: 9px;
+  }
+}
+// お客様の声
+.costomer {
+  color: $cWhite;
+
+  &__top {
+    text-align: center;
+    @extend .font-lg;
+    @extend .mb-sm;
+  }
+
+  &__inner {
+      width: 100%;
+      padding: 40px 24px 40px 24px;
+      background-color: $cBlack600;
+  }
+
+  &__item {
+    background-color: $cWhite;
+    border-radius: 20px;
+    padding: 24px;
+    padding-bottom: 12px !important;
+    @extend .mb-sm;
+    &-top {
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+      color: $cGray;
+      @extend .pb-sm;
+      width: 60%;
+      margin: 0 auto;
+    }
+    & > p {
+      color: $cBlack;
+      font-size: 12px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    @extend .pb-sm;
+  }
+  
+  
+
+
+
+}
+//プロフィール
+.history {
+  color: $cWhite;
+  &__inner {
+    background-color: $cBlack;
+    padding: 40px 24px;
+  }
+
+  &__top {
+    @extend .font-lg;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+   
+  }
+
+  &__item {
+    margin: 0 auto;
+    padding-bottom: 40px;
+    
+    &-top {
+      text-align: center;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    & > span {
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      
+    }
+  }
+  &__img {
+    border-radius: 50%;
+    padding-bottom: 16px;
+    display: block;
+    margin: 0 auto;
+  }
+  &__sub {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  &__ul {
+    padding: 0px;
+    padding-left: 16px;
+  }
+}
+// TV
+.show {
+  &__inner {
+    background-color: $cBlack600;
+    padding: 40px 24px 40px 32px;
+    
+  }
+  
+  &__logoItem {
+    display: flex;
+    @extend .mb-sm;
+    flex-direction: row;
+    align-items: center;
+    place-content: center;
+  }
+  &__top {
+    font-weight: bold;
+    font-size: 16px;  
+    color: $cWhite;
+  }
+
+  &__logo {
+    max-width: 142px;
+    max-height: 186px;
+    object-fit: cover;
+    margin-left: 8px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > img {
+      max-width: 325px;
+      max-height: 178px;
+      margin-bottom: 8px;
+    }
+  }
+}
+// よくあるご質問
+.question{
+  &__inner {
+    padding: 24px 40px;
+  }
+  &__top {
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    color: $cBlack600;
+    margin-bottom: 24px;
+
+    &-second {
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      color: $cBlack600;
+      margin-bottom: 24px;
+      margin-top: 40px;
+    }
+  }
+  &__content {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    margin-top: 24px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}
+// 今すぐ無料体験
+.experience {
+  &__color {
+    padding: 40px 24px 40px 24px;
+    background-color: $cBlack50;
+  }
+
+  &__top {
+    text-align: center;
+    font-weight: bold;
+    @extend .font-lg;
+    @extend .mb-md;
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+
+    & > p {
+      text-align: center;
+      color: $cBlack600;
+      margin-top: 4px;
+    }
+  }
+
+  &__about {
+    @extend .font-sm;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__ul {
+    font-size: 12px;
+  }
+}
+// 最後に
+.last {
+  &__inner {
+    padding: 40px 24px 40px 24px;
+  }
+
+  &__top {
+    font-weight: bold;
+    font-size: 28px;  
+    text-align: center;
+    @extend .mb-md;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+  &__img {
+    border-radius: 50%;
+    margin-bottom: 24px;
+  }
+
+  &__color {
+    padding-top: 15px;
+    padding-bottom: 23px;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+
+  }
+}

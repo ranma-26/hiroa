@@ -1,0 +1,42 @@
+.accordion input {
+  display: none;
+}
+.accordion label {
+  position: relative;
+  display: block;
+  padding: 8px 40px 8px 16px;
+  cursor: pointer;
+  background-color: $cBlack50;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.accordion label::after {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-top: -7px;
+  border-top: 2px solid $cBlack;
+  border-right: 2px solid $cBlack;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.accordion div {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .2s ease-in-out;
+}
+.accordion input:checked + label::after {
+  margin-top: -3px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.accordion input:checked ~ div {
+  height: auto;
+  margin-bottom: 16px;
+}

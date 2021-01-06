@@ -226,7 +226,7 @@ Stylesheet: 960px以上のモニタで適用
 .item {
   &__color {
     background-color: $cBlue;
-    padding: 30px 0px;
+    padding: 33px 0px;
   }
 
   &__top {
@@ -283,6 +283,10 @@ Stylesheet: 960px以上のモニタで適用
 
   &__content {
     font-size: 20px;
+  }
+  &__video {
+    width: 490px;
+    height: 277px;
   }
 }
 
@@ -373,6 +377,19 @@ Stylesheet: 960px以上のモニタで適用
     padding-bottom: 44px !important;
   }
 }
+// 粂原ライブ授業
+.live {
+  &__item {
+    padding-top: 80px;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__inner {
+    padding: 46px 0px;
+  }
+
+}
 // お客様の声
 .costomer {
   &__top {
@@ -388,6 +405,17 @@ Stylesheet: 960px以上のモニタで適用
     margin: 0 auto;
     margin-bottom: 40px !important;
   }
+}
+// 全額返金保証
+.money {
+  &__inner {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin: 0 auto;
+  } 
 }
 // プロフィール
 .history {

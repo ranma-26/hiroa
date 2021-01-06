@@ -131,6 +131,10 @@ img {
     width: 240px;
     white-space: nowrap;
 
+    & > a {
+      color: $cWhite;
+    }
+
     & > p {
       font-size: 10px;
       margin-top: 8px;
@@ -425,9 +429,15 @@ img {
 }
 // なぜ「となりにコーチ」なのか？ + +αオプション
 .item {
-  height: 0px;
+  position: relative;
   &__inner {
-    transform: translateY(-60px) rotate(-5.19deg)
+    height: 0;
+    position: absolute;
+    top: -73px;
+    width: 100%;
+    height: 0;
+    transform: skewY(-5.19deg);
+    margin-bottom: 17px;
   }
   &__color {
     background-color: $cBlue;
@@ -439,6 +449,10 @@ img {
     @extend .font-lg;
     font-weight: bold;
     text-align: center;
+    &-second {
+      transform: translateY(-60px) rotate(-5.19deg)
+    }
+
 
     &-one {
       font-size: 40px;
@@ -513,8 +527,15 @@ img {
     margin-bottom: 40px;
   }
 
-  &__img {
-    width: 100%;
+  &__video {
+    margin: 0 auto;
+    width: 272px;
+    height: 153px;
+
+    & > iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 // 京大生による受験ミーティングで勉強に関する「すべての悩みを解消」「目的達成までの完璧な計画」を実現
@@ -645,46 +666,47 @@ img {
 .live {
   &__color {
     width: 100%;
-    height: 444px;
-    position: relative;
+    height: auto;
+    // position: relative;
     overflow: hidden;
     margin: 0 auto;
+    // display: block;
   }
   &__item {
-    position: absolute;
+    background-image: url("/images/粂原さん腕組み透過.png");
+    width: 329px;
+    height: 444px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(67px);
     display: flex;
-    justify-content: space-between;
-    margin: auto;
-  }
+    // position: absolute;
+    // transform: translateX(-50%);
+   margin: 0 auto;
+     }
   &__img {
-    position: absolute;
-    transform: translateX(91px);
-    
-    text-align: right;
+
+    // transform: translateX(91px);
+    // text-align: right;
     opacity: 0.2;
-     width: 385px;
-      height: 444px;
-      object-fit: cover;
-    & > img {
-      
-     
-    }
+
   }
 
   &__inner {
-    width: 100%;
-    height: auto;
-    padding-left: 24px;
+    // position: absolute;
+    // width: 100%;
+    // height: auto;
+    transform: translateX(-67px);
     padding-top: 73px;
     padding-bottom: 40px;
-    margin: 0 auto;
+    // margin: 0 auto;
   }
   &__text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
+    // height: 100%;
     z-index: 50;
   }
 
@@ -777,6 +799,146 @@ img {
 
 
 }
+// 全額返金保証
+.money {
+  &__inner {
+    padding: 40px 24px 40px 24px;
+  }
+  &__img {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &__top {
+    font-weight: bold;
+    font-size: 28px;
+    color: $cBlue;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 9px;
+    line-height: 150%;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 33px;
+
+    &-color {
+      background-color: $cBlack50;
+      width: 192px;
+      height: 32px;
+      margin: 0px auto 8px auto;
+      border-radius: 16px;
+      color: $cBlack600;
+      text-align: center;
+      font-size: 16px;
+
+      & > span {
+        font-family: "Superclarendon";
+        font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+      }
+    }
+
+    &-text {
+      font-size: 10px;
+      margin: 0 auto 14px auto;
+    }
+
+    &-about {
+      color: $cBlue;
+      text-align: center;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+     
+
+      & > span {
+        margin-left: 20px;
+      }
+    }
+
+    &-logo {
+      border: 2px solid $cBlue;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+  }
+
+  &__sub {
+    color: $cBlack600;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 2em;
+
+    &.second {
+      color: $cBlue;
+      &::before {
+        background-color: $cBlue;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -15px;/*線の上下位置*/
+      display: inline-block;
+      width: 55px;/*線の長さ*/
+      height: 4px;/*線の太さ*/
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);/*位置調整*/
+      background-color: $cBlack;/*線の色*/
+      border-radius: 2px;/*線の丸み*/
+
+      &:nth-child(2) {
+        background-color: $cBlue;
+      }
+    }
+  }
+  &__pay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-top {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 200%;
+    }
+
+    &-about {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 143%;
+      color: $cBlue;
+    }
+
+    &-text {
+      font-size: 9px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  &__text {
+    font-size: 9px;
+    text-align: center;
+  }
+}
+
 //プロフィール
 .history {
   color: $cWhite;
@@ -920,6 +1082,10 @@ img {
     display: block;
     margin: 0 auto;
 
+    & > a {
+      color: $cWhite;
+    }
+
     & > p {
       text-align: center;
       color: $cBlack600;
@@ -968,6 +1134,5 @@ img {
     padding-top: 15px;
     padding-bottom: 23px;
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
-
   }
 }

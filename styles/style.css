@@ -280,6 +280,10 @@ img {
   white-space: nowrap;
 }
 
+.header__btn > a {
+  color: #ffffff;
+}
+
 .header__btn > p {
   font-size: 10px;
   margin-top: 8px;
@@ -548,12 +552,18 @@ img {
 }
 
 .item {
-  height: 0px;
+  position: relative;
 }
 
 .item__inner {
-  -webkit-transform: translateY(-60px) rotate(-5.19deg);
-          transform: translateY(-60px) rotate(-5.19deg);
+  height: 0;
+  position: absolute;
+  top: -73px;
+  width: 100%;
+  height: 0;
+  -webkit-transform: skewY(-5.19deg);
+          transform: skewY(-5.19deg);
+  margin-bottom: 17px;
 }
 
 .item__color {
@@ -565,6 +575,11 @@ img {
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+}
+
+.item__top-second {
+  -webkit-transform: translateY(-60px) rotate(-5.19deg);
+          transform: translateY(-60px) rotate(-5.19deg);
 }
 
 .item__top-one {
@@ -643,8 +658,15 @@ img {
   margin-bottom: 40px;
 }
 
-.play__img {
+.play__video {
+  margin: 0 auto;
+  width: 272px;
+  height: 153px;
+}
+
+.play__video > iframe {
   width: 100%;
+  height: 100%;
 }
 
 .plan {
@@ -756,50 +778,41 @@ img {
 
 .live__color {
   width: 100%;
-  height: 444px;
-  position: relative;
   overflow: hidden;
   margin: 0 auto;
+  padding: 0px 24px;
+  display: block;
 }
 
 .live__item {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: auto;
+  position: relative;
+  margin: 0 auto;
+  max-width: 712px;
 }
 
 .live__img {
   position: absolute;
-  -webkit-transform: translateX(91px);
-          transform: translateX(91px);
-  text-align: right;
+  top: 50%;
+  left: 70%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
   opacity: 0.2;
+  background-image: url("/images/粂原さん腕組み透過.png");
   width: 385px;
   height: 444px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 20px;
 }
 
 .live__inner {
-  width: 100%;
-  height: auto;
-  padding-left: 24px;
   padding-top: 73px;
   padding-bottom: 40px;
-  margin: 0 auto;
+  display: block;
+  width: 60%;
 }
 
 .live__text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   z-index: 50;
 }
 
@@ -883,6 +896,284 @@ img {
 .costomer__logo {
   display: block;
   margin: 0 auto;
+}
+
+.money__inner {
+  margin: 0 auto;
+  max-width: 712px;
+  padding: 40px 24px 40px 24px;
+}
+
+.money__img {
+  margin: 0 auto;
+  display: block;
+}
+
+.money__img.sp {
+  display: none;
+}
+
+.money__top {
+  font-weight: bold;
+  font-size: 28px;
+  color: #188FFD;
+  text-align: center;
+}
+
+.money__text {
+  font-size: 9px;
+  line-height: 150%;
+  margin-left: 15px;
+  display: inline-block;
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 16px;
+}
+
+.money__text.second {
+  text-align: center;
+  display: block;
+  margin-bottom: 33px;
+}
+
+.money__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.money__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.money__item-color {
+  background-color: #EDEDF5;
+  width: 192px;
+  height: 32px;
+  margin: 0px auto 8px auto;
+  border-radius: 16px;
+  color: #5D657D;
+  text-align: center;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.money__item-color > span {
+  font-family: "Superclarendon";
+  font-style: italic;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.money__item-text {
+  font-size: 10px;
+  margin: 0 auto 14px auto;
+}
+
+.money__item-about {
+  color: #188FFD;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  margin-bottom: 33px;
+}
+
+.money__item-about > span {
+  margin-left: 20px;
+}
+
+.money__item-logo {
+  border: 2px solid #188FFD;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.money__sub {
+  color: #5D657D;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.money__sub.second {
+  color: #188FFD;
+}
+
+.money__sub.second::before {
+  background-color: #188FFD;
+}
+
+.money__sub::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  /*線の上下位置*/
+  display: inline-block;
+  width: 55px;
+  /*線の長さ*/
+  height: 4px;
+  /*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  /*位置調整*/
+  background-color: #282C39;
+  /*線の色*/
+  border-radius: 2px;
+  /*線の丸み*/
+}
+
+.money__sub::before:nth-child(2) {
+  background-color: #188FFD;
+}
+
+.money__pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.money__pay-top {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 200%;
+}
+
+.money__pay-about {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 143%;
+  color: #188FFD;
+}
+
+.money__pay-text {
+  font-size: 9px;
+  text-align: center;
+}
+
+.money__content {
+  text-align: center;
+  margin-bottom: 16px !important;
+}
+
+table {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin: 0 auto;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  background-color: #EDEDF5;
+  border-spacing: 0px;
+}
+
+table img {
+  width: auto;
+  height: auto;
+  margin-right: 7px;
+}
+
+table tr *:nth-child(1) {
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+table th {
+  min-width: 154px;
+  min-height: 40px;
+  background-color: #188FFD;
+}
+
+table tr *:nth-child(2) {
+  text-align: center;
+  min-width: 134px;
+  min-height: 40px;
+}
+
+table tr *:nth-child(3) {
+  min-width: 134px;
+  text-align: center;
+  min-height: 40px;
+}
+
+table tr *:nth-child(4) {
+  min-width: 134px;
+  text-align: center;
+  min-height: 40px;
+}
+
+table tr *:nth-child(5) {
+  text-align: center;
+  width: 134px;
+  height: 40px;
+}
+
+table th {
+  color: #ffffff;
+  border: solid 2px #ffffff;
+  text-align: center;
+}
+
+table td {
+  border: solid 2px #ffffff;
+  color: #5D657D;
+}
+
+.table__title {
+  background-color: #969db1;
+}
+
+.table__place {
+  text-align: center;
+  color: #188FFD;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.table__text {
+  font-weight: bold;
+  font-size: 14px !important;
+  text-align: center;
+  color: #5D657D;
+}
+
+.table__img {
+  border: 2px solid #188FFD;
+  border-radius: 50%;
 }
 
 .history {
@@ -1044,6 +1335,10 @@ img {
   margin: 0 auto;
 }
 
+.experience__btn > a {
+  color: #ffffff;
+}
+
 .experience__btn > p {
   text-align: center;
   color: #5D657D;
@@ -1088,6 +1383,7 @@ img {
 
 .last__img {
   border-radius: 50%;
+  border: 2px solid #188FFD;
   margin-bottom: 24px;
 }
 
@@ -1149,6 +1445,10 @@ Stylesheet: 960px以上のモニタで適用
   .header {
     margin-bottom: 60px .header __color;
     margin-bottom-height: 641px;
+  }
+  .header__inner {
+    width: 85%;
+    margin: 0 auto;
   }
   .header__title-main {
     display: -webkit-box;
@@ -1300,14 +1600,21 @@ Stylesheet: 960px以上のモニタで適用
   .need__ul {
     margin-bottom: 8px !important;
   }
-  .item__color {
-    background-color: #188FFD;
-    padding: 30px 0px;
+  .item__inner {
+    -webkit-transform: skewY(-1.19deg);
+            transform: skewY(-1.19deg);
   }
   .item__top {
     font-size: 42px;
     width: 60%;
     margin: 0 auto;
+  }
+  .item__top-one {
+    font-size: 60px !important;
+  }
+  .item__top-second {
+    -webkit-transform: translateY(-60px) rotate(-1.19deg);
+            transform: translateY(-60px) rotate(-1.19deg);
   }
   .lecture__inner {
     -webkit-box-orient: horizontal;
@@ -1352,6 +1659,10 @@ Stylesheet: 960px以上のモニタで適用
   }
   .play__content {
     font-size: 20px;
+  }
+  .play__video {
+    width: 490px;
+    height: 277px;
   }
   .plan__color {
     padding: 60px 0px 48px 0px;
@@ -1399,6 +1710,7 @@ Stylesheet: 960px以上のモニタで適用
   .output__inner {
     width: 100%;
     padding: 40px 24px 16px 24px;
+    margin-bottom: 33px;
   }
   .output__item {
     width: 60%;
@@ -1418,6 +1730,26 @@ Stylesheet: 960px以上のモニタで適用
   .output__about {
     padding-bottom: 44px !important;
   }
+  .live__item {
+    margin-top: 60px;
+  }
+  .live__img {
+    width: 467px;
+    height: 538px;
+    opacity: 1;
+  }
+  .live__title {
+    margin-bottom: 40px;
+  }
+  .live__title-main {
+    font-size: 42px;
+  }
+  .live__title-sub {
+    font-size: 25px;
+  }
+  .live__sub {
+    font-size: 16px;
+  }
   .costomer__top {
     font-size: 42px;
     margin-bottom: 40px !important;
@@ -1429,6 +1761,37 @@ Stylesheet: 960px以上のモニタで適用
     width: 60%;
     margin: 0 auto;
     margin-bottom: 40px !important;
+  }
+  .money__inner {
+    margin: 0 auto;
+    padding: 44px 0px;
+  }
+  .money__img {
+    margin-bottom: 44px;
+  }
+  .money__img.sp {
+    display: none;
+  }
+  .money__top {
+    display: none;
+  }
+  .money__items {
+    margin: 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .money__item-color {
+    width: 300px;
+  }
+  table {
+    margin-bottom: 16px;
   }
   .history__top {
     font-size: 42px;
@@ -1569,6 +1932,23 @@ Stylesheet: 960px以上のモニタで適用
     margin: 0 auto;
     font-size: 12px;
     padding: 0px 14px 0px 0px;
+  }
+  .last__inner {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .last__top {
+    font-size: 42px;
+  }
+  .last__item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .last__text {
+    margin-left: 20px;
+    font-size: 16px;
   }
 }
 

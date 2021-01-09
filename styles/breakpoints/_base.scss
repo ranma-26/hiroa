@@ -374,12 +374,10 @@ img {
 .need {
   position: relative;
   color: $cWhite;
-
   &__inner {
       width: 100%;
       padding: 40px 24px 16px 24px;
   }
-
   &__image {
     background-color: rgba(40, 44, 57, 1);
     position: absolute;
@@ -392,27 +390,22 @@ img {
     overflow: hidden;
     z-index: -1;
   }
-
   &__item {
-
     & > p {
       @extend .mb-sm;
     }
   }
-
   &__top {
     text-align: center;
     @extend .font-lg;
     @extend .mb-sm;
   }
-
   &__ul {
     list-style: none;
     margin: 0;
     padding: 0;
     @extend .mb-sm;
   }
-
   &__li::before {
     content:  "";    
     width:  8px;              
@@ -443,7 +436,6 @@ img {
     background-color: $cBlue;
     padding: 20px 24px;
   }
-
   &__top {
     color: $cWhite;
     @extend .font-lg;
@@ -452,8 +444,6 @@ img {
     &-second {
       transform: translateY(-60px) rotate(-5.19deg)
     }
-
-
     &-one {
       font-size: 40px;
     }
@@ -666,43 +656,38 @@ img {
 .live {
   &__color {
     width: 100%;
-    height: auto;
-    // position: relative;
     overflow: hidden;
     margin: 0 auto;
-    // display: block;
+    padding: 0px 24px;
+    display: block
   }
   &__item {
-    background-image: url("/images/粂原さん腕組み透過.png");
-    width: 329px;
-    height: 444px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: translateX(67px);
-    display: flex;
-    // position: absolute;
-    // transform: translateX(-50%);
-   margin: 0 auto;
-     }
-  &__img {
-
-    // transform: translateX(91px);
-    // text-align: right;
-    opacity: 0.2;
-
+    position: relative;
+    margin: 0 auto;
+    max-width: 712px;
   }
-
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0.2;
+    background-image: url("/images/粂原さん腕組み透過.png");
+    width: 385px;
+    height: 444px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 20px;
+  }
+  
   &__inner {
-    // position: absolute;
-    // width: 100%;
-    // height: auto;
-    transform: translateX(-67px);
     padding-top: 73px;
     padding-bottom: 40px;
-    // margin: 0 auto;
+    display: block;
+    width: 60%;
   }
   &__text {
-    // position: absolute;
+
     // top: 0;
     // left: 0;
     // width: 100%;
@@ -802,11 +787,17 @@ img {
 // 全額返金保証
 .money {
   &__inner {
+    margin: 0 auto;
+    max-width: 712px;
     padding: 40px 24px 40px 24px;
   }
   &__img {
     margin: 0 auto;
     display: block;
+
+    &.sp {
+      display: none;
+    }
   }
 
   &__top {
@@ -819,12 +810,28 @@ img {
   &__text {
     font-size: 9px;
     line-height: 150%;
+    margin-left: 15px;
+    display: inline-block;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    
+    &.second {
+      text-align: center;
+      display: block;
+      margin-bottom: 33px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
   }
 
   &__item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 33px;
+  
 
     &-color {
       background-color: $cBlack50;
@@ -835,6 +842,7 @@ img {
       color: $cBlack600;
       text-align: center;
       font-size: 16px;
+      line-height: 32px;
 
       & > span {
         font-family: "Superclarendon";
@@ -853,10 +861,11 @@ img {
       color: $cBlue;
       text-align: center;
       font-size: 12px;
+      font-weight: bold;
       display: flex;
       align-items: center;
       margin: 0 auto;
-     
+      margin-bottom: 33px;
 
       & > span {
         margin-left: 20px;
@@ -920,6 +929,7 @@ img {
       font-size: 20px;
       line-height: 143%;
       color: $cBlue;
+    
     }
 
     &-text {
@@ -930,12 +940,94 @@ img {
 
   &__content {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 16px !important;
   }
   
-  &__text {
-    font-size: 9px;
+}
+
+table {
+  max-width: fit-content;
+  margin: 0 auto;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  background-color: $cBlack50;
+  border-spacing: 0px;
+  & img {
+    width: auto;
+    height: auto;
+    margin-right: 7px;
+  }
+}
+
+table tr *:nth-child(1){
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+}
+table th { 
+  min-width: 154px;
+  min-height: 40px;
+  background-color: $cBlue;
+}
+
+table tr *:nth-child(2){
+  text-align: center;
+  min-width: 134px;
+  min-height: 40px;
+  
+}
+
+table tr *:nth-child(3){
+  min-width: 134px;
+  text-align: center;
+  min-height: 40px;
+}
+table tr *:nth-child(4){
+  min-width: 134px;
+  text-align: center;
+  min-height: 40px;
+}
+table tr *:nth-child(5){
+  text-align: center;
+  width: 134px;
+  height: 40px;
+  
+  
+}
+table th{
+  color:$cWhite;
+  border:solid 2px $cWhite;
+  text-align: center;
+  
+}
+table td {
+  border:solid 2px $cWhite;
+  color:$cBlack600;
+}
+.table {
+
+  &__title {
+      background-color: $cBlack300;
+  }
+  &__place {
     text-align: center;
+    color: $cBlue;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  &__text {
+    font-weight: bold;
+    font-size: 14px !important;
+    text-align: center;
+    color: $cBlack600;
+  }
+  &__img {
+    border: 2px solid $cBlue;
+    border-radius: 50%;
   }
 }
 
@@ -1127,6 +1219,7 @@ img {
   }
   &__img {
     border-radius: 50%;
+    border: 2px solid $cBlue;
     margin-bottom: 24px;
   }
 
